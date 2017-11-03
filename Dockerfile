@@ -3,6 +3,8 @@ FROM martin/openvpn
 MAINTAINER LaoGao <noreply@phpgao.com>
 
 ADD sshtl/* /etc/openvpn/
+ADD sshtl/ccd /etc/openvpn/ccd
+ADD sshtl/pki /etc/openvpn/pki
 COPY startopenvpn /usr/local/bin/
 RUN chmod +x /usr/local/bin/startopenvpn
 
