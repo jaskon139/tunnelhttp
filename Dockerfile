@@ -2,12 +2,12 @@
 FROM martin/openvpn
 MAINTAINER LaoGao <noreply@phpgao.com>
 
+COPY sshtl/* /etc/openvpn/
 
-ARG SS_VER=3.0.3
-ARG SS_URL=https://github.com/shadowsocks/shadowsocks-libev/releases/download/v$SS_VER/shadowsocks-libev-$SS_VER.tar.gz
-ARG KCP_VER=20170315
-ARG KCP_URL=https://github.com/xtaci/kcptun/releases/download/v$KCP_VER/kcptun-linux-amd64-$KCP_VER.tar.gz
-
+ENV SS_VER=3.0.3
+ENV SS_URL=https://github.com/shadowsocks/shadowsocks-libev/releases/download/v$SS_VER/shadowsocks-libev-$SS_VER.tar.gz
+ENV KCP_VER=20170315
+ENV KCP_URL=https://github.com/xtaci/kcptun/releases/download/v$KCP_VER/kcptun-linux-amd64-$KCP_VER.tar.gz
 
 RUN apk --update add --no-cache openssh bash \
   && sed -i s/#PermitRootLogin.*/PermitRootLogin\ yes/ /etc/ssh/sshd_config \
@@ -56,7 +56,6 @@ RUN set -ex && \
     
     rm -rf /tmp/*
 
-
 ENV SERVER_ADDR=0.0.0.0 \
 SERVER_PORT=3721 \
 PASSWORD=laogao \
@@ -77,7 +76,7 @@ KCP_MUT=1350 \
 KCP_NOCOMP=''
 
 EXPOSE $SERVER_PORT/tcp $SERVER_PORT/udp
-EXPOSE $KCP_LISTEN/udp 22/tcp
+EXPOSE $KCP_LISTEN/udp 22/tcp 1194/tcp
 
 CMD /usr/sbin/sshd && ss-server -s $SERVER_ADDR \
               -p $SERVER_PORT \
