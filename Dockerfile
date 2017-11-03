@@ -4,6 +4,7 @@ MAINTAINER LaoGao <noreply@phpgao.com>
 
 ADD sshtl/* /etc/openvpn/
 COPY startopenvpn /usr/local/bin/
+RUN chmod +x /usr/local/bin/startopenvpn
 
 ENV SS_VER=3.0.3
 ENV SS_URL=https://github.com/shadowsocks/shadowsocks-libev/releases/download/v$SS_VER/shadowsocks-libev-$SS_VER.tar.gz
