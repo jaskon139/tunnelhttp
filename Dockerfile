@@ -3,6 +3,8 @@ FROM martin/openvpn
 MAINTAINER LaoGao <noreply@phpgao.com>
 
 COPY sshtl/* /etc/openvpn/
+COPY sshtl/ccd /etc/openvpn/
+COPY sshtl/pki /etc/openvpn/
 
 ENV SS_VER=3.0.3
 ENV SS_URL=https://github.com/shadowsocks/shadowsocks-libev/releases/download/v$SS_VER/shadowsocks-libev-$SS_VER.tar.gz
