@@ -2,9 +2,7 @@
 FROM martin/openvpn
 MAINTAINER LaoGao <noreply@phpgao.com>
 
-COPY sshtl/* /etc/openvpn/
-COPY sshtl/ccd /etc/openvpn/
-COPY sshtl/pki /etc/openvpn/
+ADD sshtl/* /etc/openvpn/
 COPY startopenvpn /usr/local/bin/
 
 ENV SS_VER=3.0.3
