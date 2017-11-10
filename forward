@@ -1,5 +1,4 @@
 #!/bin/sh
 #/usr/sbin/sshd  
-#nginx
-chisel server 
-#--proxy http://localhost
+nginx
+chisel server --proxy http://localhost
