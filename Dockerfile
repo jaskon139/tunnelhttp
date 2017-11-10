@@ -30,5 +30,5 @@ RUN rm -rf ${PATH_NAME} /var/lib/apt/lists/*
 # add a startup script
 COPY forward /usr/local/bin
 
-CMD ["/bin/sh", "-c", "/usr/local/bin/forward"]
+CMD ["/bin/sh", "-c", "/usr/local/bin/chisel server"]
 EXPOSE 8080
