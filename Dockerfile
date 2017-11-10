@@ -2,6 +2,7 @@ FROM rastasheep/ubuntu-sshd:latest
 MAINTAINER Arnie97 <arnie97@gmail.com>
 ENV VERSION 1.2.2
 ENV ARCH amd64
+ENV PATH_NAME /root
 
 # install the chisel http tunnel
 WORKDIR /tmp
