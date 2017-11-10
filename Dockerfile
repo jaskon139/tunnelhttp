@@ -9,8 +9,8 @@ WORKDIR /tmp
 #ENV PATH_NAME chisel_${VERSION}_linux_${ARCH}
 RUN wget -O chisel.tgz https://github.com/jpillora/chisel/releases/download/1.1.3/chisel_1.1.3_linux_amd64.tar.gz
 #https://github.com/jpillora/chisel/releases/download/${VERSION}/${PATH_NAME}.tar.gz
-RUN tar -xzvf chisel.tgz ${PATH_NAME}/chisel
-RUN mv ${PATH_NAME}/chisel /usr/local/bin
+RUN tar xvf chisel.tgz 
+RUN mv chisel_1.1.3_linux_amd64/* /usr/local/bin
 
 # install nginx
 RUN apt-get update -q
