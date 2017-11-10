@@ -12,9 +12,9 @@ RUN mv ${PATH_NAME}/chisel /usr/local/bin
 
 # install nginx
 RUN apt-get update -q
-RUN apt-get install -y software-properties-common
-RUN add-apt-repository -y ppa:nginx/stable
-RUN apt-get update -q
+#RUN apt-get install -y software-properties-common
+#RUN add-apt-repository -y ppa:nginx/stable
+#RUN apt-get update -q
 RUN apt-get install -y nginx
 RUN chown -R www-data:www-data /var/lib/nginx
 
