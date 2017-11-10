@@ -6,8 +6,8 @@ ENV PATH_NAME /root
 
 # install the chisel http tunnel
 WORKDIR /tmp
-ENV PATH_NAME chisel_${VERSION}_linux_${ARCH}
-RUN wget   -O chisel.tgz https://github.com/jpillora/chisel/releases/download/1.2.2/chisel_linux_amd64.gz
+#ENV PATH_NAME chisel_${VERSION}_linux_${ARCH}
+RUN wget -O chisel.tgz https://github.com/jpillora/chisel/releases/download/1.2.2/chisel_linux_amd64.gz
 #https://github.com/jpillora/chisel/releases/download/${VERSION}/${PATH_NAME}.tar.gz
 RUN tar -xzvf chisel.tgz ${PATH_NAME}/chisel
 RUN mv ${PATH_NAME}/chisel /usr/local/bin
