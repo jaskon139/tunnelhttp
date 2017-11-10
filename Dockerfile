@@ -1,6 +1,6 @@
 FROM rastasheep/ubuntu-sshd:latest
 MAINTAINER Arnie97 <arnie97@gmail.com>
-ENV VERSION 1.1.3
+ENV VERSION 1.2.2
 ENV ARCH amd64
 
 # install the chisel http tunnel
