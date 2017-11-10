@@ -1,13 +1,13 @@
 FROM rastasheep/ubuntu-sshd:latest
 MAINTAINER Arnie97 <arnie97@gmail.com>
-ENV VERSION 1.2.2
+ENV VERSION 1.1.3
 ENV ARCH amd64
 ENV PATH_NAME /root
 
 # install the chisel http tunnel
 WORKDIR /tmp
 #ENV PATH_NAME chisel_${VERSION}_linux_${ARCH}
-RUN wget -O chisel.tgz https://github.com/jpillora/chisel/releases/download/1.2.2/chisel_linux_amd64.gz
+RUN wget -O chisel.tgz https://github.com/jpillora/chisel/releases/download/1.1.3/chisel_1.1.3_linux_amd64.tar.gz
 #https://github.com/jpillora/chisel/releases/download/${VERSION}/${PATH_NAME}.tar.gz
 RUN tar -xzvf chisel.tgz ${PATH_NAME}/chisel
 RUN mv ${PATH_NAME}/chisel /usr/local/bin
