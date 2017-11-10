@@ -18,7 +18,7 @@ RUN apt-get update -q
 #RUN add-apt-repository -y ppa:nginx/stable
 #RUN apt-get update -q
 RUN apt-get install -y nginx
-RUN chown -R www-data:www-data /var/lib/nginx
+RUN chown 777 /var/lib/nginx
 
 # forward request and error logs to docker log collector
 RUN ln -sf /dev/stdout /var/log/nginx/access.log
