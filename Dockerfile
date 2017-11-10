@@ -31,4 +31,4 @@ RUN rm -rf ${PATH_NAME} /var/lib/apt/lists/*
 COPY forward /usr/local/bin
 
 CMD ["/bin/sh", "-c", "/usr/local/bin/forward"]
-EXPOSE 8080
+EXPOSE 80
