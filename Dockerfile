@@ -1,4 +1,5 @@
-FROM alpine
+#FROM alpine
+FROM martin/openvpn
 MAINTAINER LaoGao <noreply@phpgao.com>
 
 
