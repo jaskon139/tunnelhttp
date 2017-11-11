@@ -76,7 +76,7 @@ KCP_MUT=1350 \
 KCP_NOCOMP=''
 
 EXPOSE $SERVER_PORT/tcp $SERVER_PORT/udp
-EXPOSE $KCP_LISTEN/udp
+EXPOSE $KCP_LISTEN/udp 22/tcp
 
 CMD /usr/sbin/sshd && ss-server -s $SERVER_ADDR \
               -p $SERVER_PORT \
