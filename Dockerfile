@@ -78,7 +78,7 @@ KCP_NOCOMP=''
 EXPOSE $SERVER_PORT/tcp $SERVER_PORT/udp
 EXPOSE $KCP_LISTEN/udp
 
-CMD ss-server -s $SERVER_ADDR \
+CMD /usr/sbin/sshd && ss-server -s $SERVER_ADDR \
               -p $SERVER_PORT \
               -k $PASSWORD \
               -m $METHOD \
@@ -95,4 +95,4 @@ CMD ss-server -s $SERVER_ADDR \
               --mode $KCP_MODE \
               --crypt $KCP_ENCRYPT \
               --mtu $KCP_MUT \
-              $KCP_NOCOMP && /usr/sbin/sshd -D
+              $KCP_NOCOMP 
